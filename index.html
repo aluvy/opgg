@@ -83,11 +83,11 @@
             </div>
         </section>
         <sction id="page__interaction">
-            <div class="interaction__item">
-                <div><p>CUSTOMIZED DISPLAY MODE<br>FOR YOUR PLAY STYLE.</p></div>
+            <div class="interaction__item ani__opgg">
+                <div class="ani__txt"><p>CUSTOMIZED DISPLAY MODE<br>FOR YOUR PLAY STYLE.</p></div>
             </div>
             <div class="desktop">
-                
+
             </div>
         </sction>
         <div id="page__update">
@@ -106,5 +106,32 @@
     <!-- gsap scrub
     OPGG
     https://op.gg/desktop/?utm_source=opgg&utm_medium=button&utm_campaign=korean -->
+<script>
+    
+    gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".ani__opgg", {
+            scrollTrigger : {
+                trigger : ".ani__opgg",
+                markers: true,
+                start: "top top",
+                end: "bottom 100px",
+                scrub: true,
+                // pin: true   // boolean 값 또는 엘리먼트
+            },
+            y: 730, scale:0.55
+        });
+        gsap.to(".ani__txt", {
+            scrollTrigger : {
+                trigger : ".ani__opgg",
+                markers: true,
+                start: "top top",
+                end: "bottom 100px",
+                scrub: true,
+                // pin: true   // boolean 값 또는 엘리먼트
+            },
+            opacity: 0,
+        })
+    
+</script>
 </body>
 </html>
