@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>OP.GG for Desktop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Montserrat', 'Noto Sans KR']
+            }
+        });
+    </script>
+
+    <link rel="stylesheet" href="./assets/css/common.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <section id="page__main">
+            <div class="main__head">
+                <h1><a href="#"><span class="blind">OP.GG</span></a></h1>
+                <div class="main__ui-lang">
+                    <button type="button">KR</button>
+                </div>
+            </div>
+            <div class="main__content">
+                <h2 class="blind">about OP.GG</h2>
+                <div class="main__content-ttl">
+                    <p>YOUR BEST PLAY,<br>WITH OP.GG FOR DESKTOP</p>
+                </div>
+                <div class="main__content-btn">
+                    <button type="button" class="btn_download">Download OP.GG Desktop</button>
+                    <button type="button" class="btn_riot">Riot Games Compliant</button>
+                </div>
+                <div class="main__content-scroll">
+                    scroll down to take a sneak peok of all new OP.GG for DeskTop!
+                    <button type="button" class="main__scroll-btn">
+                        <span class="animation"></span>
+                        <span>Scroll</span>
+                    </button>
+                </div>
+            </div>
+            <video muted autoplay loop class="main__bg-video">
+                <source src="./assets/img/bg.mp4" type="video/mp4">
+                <strong>Your browser does not support the video tag.</strong>
+            </video>
+        </section>
+        <section id="page__ui">
+            <h2 class="blind">OP.GG ui</h2>
+            <div class="ui__ttl">
+                <p>User interface updates for<br>improved user experience.</p>
+                <span>New OP.GG for Desktop screen</span>
+            </div>
+            <div class="ui__slide">
+                <div class="ui__slide-btn">
+                    <div class="ui__slide-btnwrap">
+                        <button type="button" class="on">Multi-Search</button>
+                        <button type="button">In Game</button>
+                        <button type="button">Champions</button>
+                        <button type="button">Profile</button>
+                    </div>
+                </div>
+                <div class="ui__slide-panel">
+                    <div class="ui__slide-item">
+                        <div class="item item01"></div>
+                    </div>
+                    <!-- <div class="ui__slide-item">
+                        <div class="item item02"></div>
+                    </div>
+                    <div class="ui__slide-item">
+                        <div class="item item03"></div>
+                    </div>
+                    <div class="ui__slide-item">
+                        <div class="item item04"></div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <sction id="interaction">
+            CUSTOMIZED DISPLAY MODE<br>FOR YOUR PLAY STYLE.
+        </sction>
+    </div>
+    <!-- gsap scrub
+    OPGG
+    https://op.gg/desktop/?utm_source=opgg&utm_medium=button&utm_campaign=korean -->
+</body>
+</html>
