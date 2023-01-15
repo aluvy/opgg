@@ -51,14 +51,15 @@ html, body {width:100%; height:100%;}
 /* interaction */
 #page__interaction {}
 .interaction__group {position:relative; height:60rem;}
-.interaction__item {position:relative; top:0; left:0; right:0; width:108rem; height:73rem; margin:0 auto; z-index:2; box-sizing:border-box;}
+.interaction__item {position:relative; top:0; left:0; right:0; /*width:108rem;*/ width:100%; height:73rem; margin:0 auto; z-index:2; box-sizing:border-box;}
 
-.interaction__txt {position:absolute; left:0; top:0; width:100%; height:100%; display:flex; align-items:center; justify-content: center; background:url(../img/ui_bg.png) center top no-repeat; background-size:contain; z-index:3;}
+.interaction__txt {position:absolute; left:0; top:0; width:100%; height:100%; display:flex; align-items:center; justify-content: center; background:url(../img/ui_bg.png) center top no-repeat; background-size:100% auto; z-index:3;}
 .interaction__txt p{font-size:5rem; font-weight:900; line-height:1.2; text-align:center; z-index:2;}
+
 .desktop__item {position:relative;}
 .desktop__item-normal {position:absolute; left:0; top:0; display:block; width:100%; height:100%; background:url(../img/ui_bg.png) center top no-repeat; background-size:contain; z-index:2;}
-.desktop__item-normal::before {content:''; position:absolute; right:2%; bottom:2%; display:block; width:81%; height:82%; background:url(../img/desktop_normal.png) 0 0 no-repeat; background-size:contain;}
-.desktop__item-mini {position:absolute; left:0; top:0; display:block; width:100%; height:100%; background:url(../img/desktop_mini.png) center center no-repeat; background-size:contain; display:none; z-index:2;}
+.desktop__item-normal::before {content:''; position:absolute; right:2%; bottom:2%; display:block; width:81%; height:82%; background:url(../img/desktop_normal.png) center top no-repeat; background-size:contain;}
+.desktop__item-mini {position:absolute; left:0; top:0; display:block; width:100%; height:100%; background:url(../img/desktop_mini.png) center top no-repeat; background-size:contain; display:none; z-index:2;}
 
 .desktop__wrap {}
 .desktop__nav {display:flex; align-items:center; justify-content: center; gap:10rem;}
