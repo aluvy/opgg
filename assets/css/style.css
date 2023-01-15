@@ -29,7 +29,7 @@ html, body {width:100%; height:100%;}
 
 
 /* page__ui */
-#page__ui {width:130rem; padding:0 5rem; margin:12rem auto; box-sizing:border-box;}
+#page__ui {width:108rem; margin:12rem auto;}
 .ui__ttl p{font-size:5rem; font-weight:900; line-height:1.4;}
 .ui__ttl span{display:block; font-size:1.2rem; margin-top:2rem;}
 .ui__slide {margin-top:8.8rem;}
@@ -50,10 +50,34 @@ html, body {width:100%; height:100%;}
 
 /* interaction */
 #page__interaction {}
-.interaction__item {position:relative; width:100%; padding-bottom:56.5%; background:url(../img/ui_bg.png) 0 0 no-repeat; background-size:contain;}
-.interaction__item div {position:absolute; left:0; top:0; width:100%; height: 100%; display:flex; align-items:center; justify-content: center;}
-.interaction__item p {font-size:5rem; font-weight:900; line-height:1.2; text-align:center;}
-.desktop {width:108rem; height:72rem; margin:0 auto; background:url(../img/desktop.png) 0 0 no-repeat; background-size:contain;}
+.interaction__group {position:relative; height:60rem;}
+.interaction__item {position:relative; top:0; left:0; right:0; width:108rem; height:73rem; margin:0 auto; z-index:2; box-sizing:border-box;}
+
+.interaction__txt {position:absolute; left:0; top:0; width:100%; height:100%; display:flex; align-items:center; justify-content: center; background:url(../img/ui_bg.png) center top no-repeat; background-size:contain; z-index:3;}
+.interaction__txt p{font-size:5rem; font-weight:900; line-height:1.2; text-align:center; z-index:2;}
+.desktop__item {position:relative;}
+.desktop__item-normal {position:absolute; left:0; top:0; display:block; width:100%; height:100%; background:url(../img/ui_bg.png) center top no-repeat; background-size:contain; z-index:2;}
+.desktop__item-normal::before {content:''; position:absolute; right:2%; bottom:2%; display:block; width:81%; height:82%; background:url(../img/desktop_normal.png) 0 0 no-repeat; background-size:contain;}
+.desktop__item-mini {position:absolute; left:0; top:0; display:block; width:100%; height:100%; background:url(../img/desktop_mini.png) center center no-repeat; background-size:contain; display:none; z-index:2;}
+
+.desktop__wrap {}
+.desktop__nav {display:flex; align-items:center; justify-content: center; gap:10rem;}
+.desktop__nav button {opacity: 0.3; transition:opacity .3s;}
+.desktop__nav button.on {opacity:1;}
+.desktop__nav button span{display:block; color:#fff; font-weight:500;}
+.desktop__nav button span::before {content:''; display:block; height:5.6rem; background:url(../img/icon_normal.svg) 50% 50% no-repeat; background-size:contain; margin-bottom:1.4rem;}
+.desktop__nav button:nth-child(2) span::before {background-image:url(../img/icon_mini.svg);}
+.desktop__bg {position:relative; width:108rem; height:72rem; margin:6.6rem auto 0; background:url(../img/desktop.png) 0 0 no-repeat; background-size:contain;}
+.desktop__item-normal-ui {position:absolute; left:50%; bottom:4.6rem; transform:translateX(-50%); display:block; width:16.8rem; height:5.6rem; background:url(../img/desktop_normal_ui.png) center center no-repeat; background-size:contain;}
+.desktop__item-mini-ui {position:absolute; left:50%; bottom:2rem; transform:translateX(-50%); display:block; width:38.4rem; height:9rem; background:url(../img/desktop_mini_ui.png) center center no-repeat; background-size:contain; display:none;}
+
+.item__normal,
+.item__mini {animation:fadeIn 1 .5s;}
+@keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
 
 
 
@@ -64,3 +88,9 @@ html, body {width:100%; height:100%;}
 .update__image img {width:100%;}
 .update__image1 {grid-column: 1 / 3;}
 .update__image2 {grid-row: 2 / 4;}
+
+
+/* footer */
+footer {width:108rem; margin:8.8rem auto 6.9rem;}
+footer::before{content:''; display: block; width:9,9rem; height:2.4rem; background:url(../img/logo_f.png) 0 0 no-repeat; background-size:contain;}
+footer p{font-size:1.2rem; color:#7b7a8e; line-height:1.4; margin:1.6rem 0 0;}

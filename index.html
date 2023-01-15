@@ -39,7 +39,7 @@
                     <button type="button" class="btn_riot">Riot Games Compliant</button>
                 </div>
                 <div class="main__content-scroll">
-                    scroll down to take a sneak peok of all new OP.GG for DeskTop!
+                    <p>scroll down to take a sneak peok of all new OP.GG for DeskTop!</p>
                     <button type="button" class="main__scroll-btn">
                         <span class="animation"></span>
                         <span>Scroll</span>
@@ -83,14 +83,29 @@
             </div>
         </section>
         <sction id="page__interaction">
-            <div class="interaction__item ani__opgg">
-                <div class="ani__txt"><p>CUSTOMIZED DISPLAY MODE<br>FOR YOUR PLAY STYLE.</p></div>
+            <div class="interaction__group">
+                <div class="interaction__item">
+                    <div class="interaction__txt"><p>CUSTOMIZED DISPLAY MODE<br>FOR YOUR PLAY STYLE.</p></div>
+                    <div class="desktop__item-normal item__normal"></div>
+                    <div class="desktop__item-mini item__mini"></div>
+                </div>
             </div>
-            <div class="desktop">
-
+            <div class="desktop__wrap">
+                <div class="desktop__nav">
+                    <button type="button" class="item__normal on">
+                        <span>Normal mode</span>
+                    </button>
+                    <button type="button" class="item__mini">
+                        <span>Mini mode</span>
+                    </button>
+                </div>
+                <div class="desktop__bg">
+                    <span class="desktop__item-normal-ui item__normal"></span>
+                    <span class="desktop__item-mini-ui item__mini"></span>
+                </div>
             </div>
         </sction>
-        <div id="page__update">
+        <section id="page__update">
             <h2 class="blind">OP.GG update</h2>
             <div class="update__ttl">
                 <p>Updated interface and experience to<br>Update your game play</p>
@@ -101,28 +116,127 @@
                 <span class="update__image3"><img src="./assets/img/update_3.png" alt="update image3" /></span>
                 <span class="update__image4"><img src="./assets/img/update_4.png" alt="update image4" /></span>
             </div>
-        </div>
+        </section>
+        <section>
+
+        </section>
+        <footer>
+            <div class="logo"></div>
+            <p>
+                © 2012-2022 OP.GG. OP.GG isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+            </p>
+        </footer>
     </div>
-    <!-- gsap scrub
-    OPGG
-    https://op.gg/desktop/?utm_source=opgg&utm_medium=button&utm_campaign=korean -->
 <script>
-    
-    gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".ani__opgg", {
+    window.addEventListener("load", ()=>{
+
+        const desktopActive = function(){
+            let desktopNavOn = document.querySelector(".desktop__nav .on");
+            let normal = Array.from(document.querySelectorAll("div.item__normal, span.item__normal"));
+            let mini = Array.from(document.querySelectorAll("div.item__mini, span.item__mini"));
+
+            if ( desktopNavOn.classList.contains("item__normal") ){
+                normal.forEach((item, idx)=>{ item.style.display = "block"; })
+                mini.forEach((item, idx)=>{ item.style.display = "none"; })
+            } else {
+                normal.forEach((item, idx)=>{ item.style.display = "none"; })
+                mini.forEach((item, idx)=>{ item.style.display = "block"; })
+            }
+        }
+        desktopActive();
+
+        let desktopNav = Array.from(document.querySelectorAll(".desktop__nav button"));
+        desktopNav.forEach((item, idx)=>{
+            item.addEventListener("click", function(e){
+                this.parentNode.querySelectorAll("button").forEach((btn, idx)=>{ btn.classList.remove("on") })
+                this.classList.add("on");
+                desktopActive();
+            })
+        })
+
+        let scroll = document.querySelector(".main__scroll-btn");
+        let winH = window.innerHeight;
+        scroll.addEventListener("click", ()=>{
+            window.scrollTo({
+                top:winH,
+                behavior: "smooth"
+            })
+        })        
+        
+        
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".main__content-ttl p", {
+            scrollTrigger: {
+                trigger : ".main__content-ttl p",
+                toggleActions: "restart play resume pause"
+            },
+            y:"10rem", opacity:0, duration:1.5
+        })
+
+        gsap.from(".main__content-scroll p", {
+            scrollTrigger: {
+                trigger : ".main__content-scroll p",
+                toggleActions: "restart play resume pause"
+            },
+            y:"10rem", opacity:0, delay: 0.7, duration:1.5
+        })
+
+        gsap.from(".ui__ttl", {
+            scrollTrigger: {
+                trigger : ".ui__ttl",
+                toggleActions: "restart play resume pause"
+            },
+            y:"10rem", opacity:0, duration:1
+        })
+
+        gsap.from(".update__ttl p", {
+            scrollTrigger: {
+                trigger : ".update__ttl p",
+                toggleActions: "restart play resume pause"
+            },
+            y:"10rem", opacity:0, duration:1
+        })
+
+        const updateImage = document.querySelectorAll(".update__image span");
+        updateImage.forEach((item, idx)=>{
+            gsap.from(item , {
+                scrollTrigger: {
+                    trigger : item,
+                    toggleActions: "restart play resume pause",
+                    start:"top bottom",
+
+                },
+                y:"10rem", opacity:0, duration:1
+            })
+        })
+        
+
+        // gsap.from(".interaction__item", {
+        //     scrollTrigger : {
+        //         trigger : ".interaction__group",
+        //         // markers: true,
+        //         start: "top top",
+        //         // end: "bottom top",
+        //         scrub: true,
+        //         // pin: true   // boolean 값 또는 엘리먼트
+        //     },
+        //     // top:0, paddingBottom:"56.5%", margin:0;
+        //     // top:0, width:"130rem", height:"73rem",
+        // });
+        gsap.to(".interaction__item", {
             scrollTrigger : {
-                trigger : ".ani__opgg",
-                // markers: true,
+                trigger : ".interaction__group",
                 start: "top top",
-                end: "bottom 100px",
                 scrub: true,
                 // pin: true   // boolean 값 또는 엘리먼트
             },
-            y: 730, scale:0.55
+            top:"85rem", width:"80rem", height:"45rem"
         });
-        gsap.to(".ani__txt", {
+        
+        gsap.to(".interaction__txt", {
             scrollTrigger : {
-                trigger : ".ani__opgg",
+                trigger : ".interaction__group",
                 // markers: true,
                 start: "top top",
                 end: "bottom 100px",
@@ -131,6 +245,8 @@
             },
             opacity: 0,
         })
+    })
+    
     
 </script>
 </body>
