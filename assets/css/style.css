@@ -33,20 +33,25 @@ html, body {width:100%; height:100%;}
 .ui__ttl p{font-size:5rem; font-weight:900; line-height:1.4;}
 .ui__ttl span{display:block; font-size:1.2rem; margin-top:2rem;}
 .ui__slide {margin-top:8.8rem;}
-.ui__slide-btn {position:absolute; left:50%; transform:translateX(-50%); width:100%; height:4.4rem; height:4.4rem; overflow: hidden;}
-.ui__slide-btnwrap {position:absolute; left:calc(50% - 19.5rem);}
-.ui__slide-btn button{width:19rem; height:4.4rem; line-height:4.4rem; border-radius:4.4rem; color:#7b7a8e; background:#1b1b1d;}
-.ui__slide-btn button::after{content:''; display:inline-block; width:0; height:1px; background:#fff; vertical-align: middle; margin-left:1rem; transition:width .3s;}
+.ui__slide-btn {position:absolute; left:50%; transform:translateX(-50%); width:100%; height:4.4rem; overflow: hidden;}
+.ui__slide-btnwrap {position:absolute; left:calc(50% - 19.5rem); width:fit-content; white-space:nowrap; transition:left .3s;}
+.ui__slide-btn button{width:19rem; height:4.4rem; line-height:4.4rem; border-radius:4.4rem; color:#7b7a8e; background:#1b1b1d; transition:margin .7s;}
+.ui__slide-btn button::after{content:''; display:inline-block; width:0; height:1px; background:#fff; vertical-align: middle; margin-left:1rem; transition:width .7s;}
 .ui__slide-btn button.on {background:linear-gradient(78deg,#ab02d0,#05d0ea); color:#fff; margin:0 10rem;}
 .ui__slide-btn button.on::after {width:4rem;}
 .ui__slide-panel {padding-top:12rem; width:76.8rem; margin:0 auto;}
 .ui__slide-item {position:relative; width:76.8rem; height:43.2rem; background:url(../img/ui_bg.png) 0 0 no-repeat; background-size:contain;}
-.ui__slide-item .item{position:absolute; right:1.6rem; bottom:1.6rem; display:block; width:61.2rem; height:33.9rem; background-position:0 0; background-repeat:no-repeat; background-size:contain;}
+.ui__slide-item .item{position:absolute; right:1.6rem; bottom:1.6rem; display:block; width:61.2rem; height:33.9rem; background-position:0 0; background-repeat:no-repeat; background-size:contain; display:none;}
+.ui__slide-item .item.on {display: block; animation:fadeIn .7s ease-in;}
 .ui__slide-item .item.item01{background-image:url(../img/ui_1.png);}
 .ui__slide-item .item.item02{background-image:url(../img/ui_2.png);}
 .ui__slide-item .item.item03{background-image:url(../img/ui_3.png);}
 .ui__slide-item .item.item04{width:64.6rem; height:37.3rem; right:0; background-image:url(../img/ui_4.png);}
 
+@keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
 
 /* interaction */
 #page__interaction {}
