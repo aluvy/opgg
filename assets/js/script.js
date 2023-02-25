@@ -36,7 +36,6 @@ window.addEventListener("load", ()=>{
     let slideBtnWrap = document.querySelector(".ui__slide-btnwrap");
     let slideBtn = [...slideBtnWrap.querySelectorAll("button")];
     let slideItem = [...document.querySelectorAll(".ui__slide-item .item")];
-    // console.log(slideBtn, slideItem);
     slideBtn.forEach((e, i)=>{
         e.addEventListener("click", function(){
             sibilings(e).forEach((el)=>{ el.classList.remove("on") });
@@ -100,19 +99,6 @@ window.addEventListener("load", ()=>{
         })
     })
     
-
-    // gsap.from(".interaction__item", {
-    //     scrollTrigger : {
-    //         trigger : ".interaction__group",
-    //         // markers: true,
-    //         start: "top top",
-    //         // end: "bottom top",
-    //         scrub: true,
-    //         // pin: true   // boolean 값 또는 엘리먼트
-    //     },
-    //     // top:0, paddingBottom:"56.5%", margin:0;
-    //     // top:0, width:"130rem", height:"73rem",
-    // });
     gsap.to(".interaction__item", {
         scrollTrigger : {
             trigger : ".interaction__group",
